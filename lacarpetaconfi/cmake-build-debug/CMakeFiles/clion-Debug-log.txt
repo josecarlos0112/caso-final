@@ -1,1 +1,0 @@
-CMakeLists.txt not found in C:\Users\danij\OneDrive\Documentos\GitHub\caso-final\lacarpetaconfi Select CMakeLists.txt

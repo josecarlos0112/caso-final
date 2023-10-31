@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#include "configuracion.h"
 
-class Configuration {
+class configuracion {
 public:
-    Configuration(); // Constructor
+    configuracion(); // Constructor
     void addExtension(const std::string& extensionName, const std::string& extensionPath);
     std::string getExtensionPath(const std::string& extensionName) const;
 
@@ -12,26 +13,25 @@ private:
     std::unordered_map<std::string, std::string> extensions;
 };
 
-configuration::Configuration() {
+configuracion::configuracion() {
     // Constructor, inicializa la configuración si es necesario
 }
 
-void configuration::addExtension(const std::string& extensionName, const std::string& extensionPath) {
+void configuracion::addExtension(const std::string& extensionName, const std::string& extensionPath) {
     // Agregar una extensión a la configuración
     extensions[extensionName] = extensionPath;
 }
 
-std::string configuration::getExtensionPath(const std::string& extensionName) const {
+std::string configuracion::getExtensionPath(const std::string& extensionName) const {
     // Obtener el path de una extensión según su nombre
     if (extensions.find(extensionName) != extensions.end()) {
         return extensions.at(extensionName);
     }
     return ""; // Devuelve una cadena vacía si no se encuentra la extensión
 }
-#include "configuration.h"
 
 int main() {
-    Configuration config;
+    configuracion config;
     config.addExtension("extension1", "path/to/extension1");
     config.addExtension("extension2", "path/to/extension2");
 

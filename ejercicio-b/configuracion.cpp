@@ -1,15 +1,16 @@
-#include "Configuration.h"
+#include "configuracion.h"
+#include <string>
 
-Configuration::Configuration() {
+configuracion::configuracion() {
     // Constructor, inicializa la configuración si es necesario
 }
 
-void Configuration::addExtension(const std::string& extensionName, const std::string& extensionPath) {
+void configuracion::addExtension(const std::string& extensionName, const std::string& extensionPath) {
     // Agregar una extensión a la configuración
     extensions[extensionName] = extensionPath;
 }
 
-std::string Configuration::getExtensionPath(const std::string& extensionName) const {
+std::string configuracion::getExtensionPath(const std::string& extensionName) const {
     // Obtener el path de una extensión según su nombre
     if (extensions.find(extensionName) != extensions.end()) {
         return extensions.at(extensionName);
